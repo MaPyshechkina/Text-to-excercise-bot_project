@@ -60,20 +60,19 @@ def freq_nouns_genitive(text):
 print(freq_nouns_genitive(text))
 
 
-#функция для поиска редких существительных в Gen
-def rare_nouns_genitive(text):
-    doc = nlp(text)
-    cases = {}
-    for token in doc:
-        if token.pos_ == 'NOUN' and token.morph.get('Case') == 'Gen':
-            lemma = token.lemma_.lower()
-            cases[lemma] = cases.get(lemma, 0) + 1  # Считаем количество каждого существительного
+# Словарь для подсчета редких существительных в родительном падеже
+noun_freq = {}
 
-    # Выбираем существительные, которые встретились реже 2 раз
-    rare_nouns = [word for word, count in cases.items() if count < 2]
+for token in doc:
+    if token.pos_ != 'PUNCT':
+        cases[token.text] = token.morph.get('Case')
+        if token.text in noun_freq:
+            noun_freq[token.text] += 1
+        else:
+            noun_freq[token.text] = 1
 
-    return rare_nouns
-
-print(rare_nouns_genitive(text))
+# Вывод редких существительных в родительном падеже (менее 2 раз в тексте)
+rare_nouns_genitive = [noun for noun, freq in noun_freq.items() if freq < 2]
+print(rare_nouns_genitive)
 
 
