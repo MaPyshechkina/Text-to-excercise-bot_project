@@ -7,3 +7,6 @@ This project features an NLP bot that takes (1)educational texts from users and 
 3. The level of complexity can be determined by a list of words with a rarer declension paradigm.
    
 [Presentation](https://view.genially.com/660ef0abdeffd1001476c389/presentation-auto-gen-pres)
+
+**Articles**
+Pyshechkina M.A.(2024). Automatic exercise generation from educational text. RFL in the Modern World: Current Directions and Aspects of Research. Proceedings of the International Scientific and Practical Conference for Teachers and Specialists Working with Foreign Students (Yekaterinburg, April 11–12, 2024). URL: http://elar.urfu.ru/handle/10995/138287
